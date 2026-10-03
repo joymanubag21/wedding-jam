@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Join our Wedding Jam</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDF9F3">
 
 <script>
 /* ═══════════════════════════════════════════════════════════════════════
@@ -20,44 +21,62 @@
 const SPOTIFY_JAM_URL = "https://open.spotify.com/socialsession/0cFypbz17T5TKmXdoviWd1?si=ZAp3-JyHSHmQSiK1uoEOqw&utm_source=copy-link";
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@400;600&display=swap">
 <style>
-  /* No webfonts and no images on purpose: this page exists to be gone in a
-     blink, often on a phone with one bar of reception at a reception. */
-  :root{ --bg:#FDF9F3; --ink:#2A2420; --ink-2:#5A5048; --ink-3:#9A8E82;
-         --green:#4A6B4A; --rose:#C4785A; --line:rgba(196,120,90,.22); }
+  /* The same ladder as every other page of this wedding: cream, Cormorant
+     over Jost, one italic word in rose, one green button. display=swap, so
+     the words are on screen before the fonts are - this page is usually gone
+     in a blink and must never wait on a webfont to say anything. */
+  :root{
+    --bg:#FDF9F3; --ink:#2A2420; --ink-2:#5A5048; --ink-3:#9A8E82;
+    --green:#4A6B4A; --rose:#C4785A; --line:rgba(196,120,90,.22); --line-2:rgba(196,120,90,.34);
+    --r-lg:12px; --tr:.14em;
+  }
   *{ -webkit-tap-highlight-color:transparent; box-sizing:border-box }
   html,body{ margin:0; padding:0 }
   body{
     background:var(--bg); color:var(--ink); min-height:100svh;
-    display:grid; place-items:center; padding:28px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5; -webkit-font-smoothing:antialiased;
+    display:grid; place-items:center; padding:30px 24px;
+    font-family:'Jost','Helvetica Neue',Arial,sans-serif; font-size:15px; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
   }
-  .card{ width:100%; max-width:380px; text-align:center }
-  .note{ font-size:34px; line-height:1; margin:0 0 18px }
-  h1{ margin:0; font-size:1.6rem; font-weight:600; letter-spacing:-.01em }
-  p{ margin:10px 0 26px; font-size:15px; color:var(--ink-2) }
+  .card{ width:100%; max-width:390px; text-align:center }
+
+  h1{ margin:0 0 4px; font-weight:400; font-family:'Cormorant Garamond',Georgia,serif }
+  h1 span{
+    display:block; font-size:1.6rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink);
+  }
+  h1 em{ display:block; font-style:italic; font-size:2.7rem; line-height:1.05; color:var(--rose) }
+
+  .lede{ margin:16px auto 26px; max-width:28ch; font-size:14.5px; color:var(--ink-2); line-height:1.55 }
+
   a.go{
-    display:block; text-decoration:none; min-height:56px; line-height:56px;
-    border-radius:12px; background:var(--green); color:#fff;
-    font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    display:block; text-decoration:none; min-height:54px; line-height:54px;
+    border-radius:var(--r-lg); background:var(--green); color:#fff;
+    font-size:12px; font-weight:600; letter-spacing:var(--tr); text-transform:uppercase;
   }
   .fine{
-    margin:16px 0 0; padding-top:14px; border-top:1px solid var(--line);
-    font-size:12px; color:var(--ink-3);
+    margin:14px 0 0; padding-top:12px; border-top:1px solid var(--line);
+    font-size:11.5px; line-height:1.6; color:var(--ink-3);
   }
-  .names{ margin-top:22px; font-size:12px; letter-spacing:.16em;
-          text-transform:uppercase; color:var(--rose) }
+  .rule{ display:flex; align-items:center; justify-content:center; gap:10px; margin-top:24px }
+  .rule i{ display:block; width:44px; height:1px; background:var(--line-2) }
+  .rule span{
+    font-size:10.5px; font-weight:600; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-3);
+  }
 </style>
 </head>
 <body>
   <div class="card">
-    <p class="note">&#127925;</p>
-    <h1>Join our Wedding Jam</h1>
-    <p>Add a song to our wedding soundtrack.</p>
-    <a class="go" id="jam" href="#">Join Spotify Jam</a>
+    <h1><span>Join our</span><em>Wedding Jam</em></h1>
+    <p class="lede">Add a song to our wedding soundtrack.</p>
+    <a class="go" id="jam" href="#">Open Spotify Jam</a>
     <p class="fine">If Spotify did not open on its own, tap the button.</p>
-    <p class="names">Joy &amp; Patrick &middot; 10 October 2026</p>
+    <div class="rule"><i></i><span>Joy &amp; Patrick</span><i></i></div>
   </div>
 
 <script>
